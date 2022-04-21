@@ -1,9 +1,14 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import Splash from "../components/splash";
 
 // markup
 const IndexPage = () => {
-  return <Layout>Hi. I'm the index.</Layout>;
+  return (
+    <Layout>
+      <Splash />
+    </Layout>
+  );
 };
 
 export default IndexPage;
