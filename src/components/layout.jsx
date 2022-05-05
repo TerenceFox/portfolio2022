@@ -2,10 +2,10 @@ import * as React from "react";
 import Header from "../components/header";
 import "../styles/styles.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
-    <div>
-      <Header />
+    <div className="wrapper">
+      <Header location={location} />
       <main>{children}</main>
       <footer>
         <h3>Contact</h3>

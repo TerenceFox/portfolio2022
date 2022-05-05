@@ -3,9 +3,9 @@ import Layout from "../components/layout";
 import Splash from "../components/splash";
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <Splash />
     </Layout>
   );

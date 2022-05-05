@@ -1,12 +1,18 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-const Header = () => {
+const Header = ({ location }) => {
   return (
     <header>
-      <Link className="title" to="/">
-        <h1>Terence Fox</h1>
-      </Link>
+      <div className="title">
+        {location.pathname === "/" ? (
+          ""
+        ) : (
+          <Link to="/">
+            <h1>Terence Fox</h1>
+          </Link>
+        )}
+      </div>
       <nav>
         <ul>
           <li>

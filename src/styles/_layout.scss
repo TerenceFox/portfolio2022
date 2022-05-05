@@ -1,8 +1,44 @@
-body {
+body, html {
   background-color: $bg;
+  height: 100%;
+  padding: 1rem;
+}
+
+#gatsby-focus-wrapper {
+  height: 100vh;
 }
 
 header {
   display: inline-flex;
-
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: $accent;
+  }
+}
+
+footer {
+  display:inline-flex;
+  width: 100%;
+  justify-self: end;
+  justify-content: end;
+}
+
+.container {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+}
+
