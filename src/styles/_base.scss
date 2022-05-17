@@ -111,7 +111,7 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: 'Avant Garde';
+  font-family: $headers;
   color: $black;
 }
 
@@ -121,5 +121,30 @@ h1, h2, h3 {
   color: $black;
 }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: $accent;
+  }
+}
+
 /* Mixins */
 
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (min-width: 768px) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: 992px) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+} 

@@ -1,29 +1,45 @@
 body, html {
   background-color: $bg;
   height: 100%;
-  padding: 1rem;
+  padding: .5rem;
+  @include breakpoint(sm) {
+    padding: 1rem;
+  }
 }
 
 #gatsby-focus-wrapper {
   height: 100vh;
 }
 
-header {
-  display: inline-flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-a {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-    color: $accent;
+.wrapper--home {
+  main {
+    order: 1;
+  }
+  header {
+    order: 2;
+  }
+  @include breakpoint(sm) {
+    header {
+      order: 1;
+    }
+    main {
+      order: 2;
+    }
   }
 }
 
+header {
+  @include breakpoint(sm) {
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
 footer {
+  order: 3;
   display:inline-flex;
   width: 100%;
   justify-self: end;
@@ -32,7 +48,6 @@ footer {
 
 .container {
   height: 100%;
-  padding: 10px;
   display: flex;
   flex-direction: column;
 }

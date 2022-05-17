@@ -11,7 +11,7 @@ const Splash = ({ children }) => {
         </Link>
         <h2 className="splash-header">UX Engineer</h2>
       </div>
-      <div className="splash">
+      <div className="splash-image">
         <StaticImage
           src="../images/waterfall.jpg"
           alt="Fall waterfall"
