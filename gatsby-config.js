@@ -22,10 +22,10 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "posts",
+        path: "./src/posts/",
       },
-      __key: "pages",
+      __key: "posts",
     },
   ],
 };

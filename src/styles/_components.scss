@@ -35,11 +35,9 @@ nav {
   ul {
     padding: 0;
     list-style: none;
-    @include breakpoint(sm) {
-      display: inline-flex;
+    display: inline-flex;
       li {
         margin-right: 1rem;
       }
     }
-  }
 }
