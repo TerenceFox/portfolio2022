@@ -9,7 +9,7 @@
   }
 }
 
-.splash-image {
+.splash-image, .work-image {
   max-width: 100%;
   border: solid $black 1px;
   padding: .5rem;
@@ -40,4 +40,14 @@ nav {
         margin-right: 1rem;
       }
     }
+}
+
+/* CV Entries */
+.cv-entry {
+  h3 {
+    margin-bottom: 1rem;
+  }
+  .body {
+    margin-bottom: 4rem;
+  }
 }

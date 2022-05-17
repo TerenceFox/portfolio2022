@@ -8,22 +8,22 @@ const Header = ({ location }) => {
         {location.pathname === "/" ? (
           ""
         ) : (
-          <Link to="/">
-            <h1>Terence Fox</h1>
-          </Link>
+          <h1>
+            <Link to="/">Terence Fox</Link>
+          </h1>
         )}
       </div>
       <nav>
         <ul>
           <li>
-            <Link to="/work">
-              <h2>Work</h2>
-            </Link>
+            <h2>
+              <Link to="/work">Work</Link>
+            </h2>
           </li>
           <li>
-            <Link to="/photography">
-              <h2>Photography</h2>
-            </Link>
+            <h2>
+              <Link to="/photography">Photography</Link>
+            </h2>
           </li>
         </ul>
       </nav>
