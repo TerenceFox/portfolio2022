@@ -8,7 +8,7 @@ const Entry = ({ node }) => {
       </div>
       <div className="content">
         <h2>{node.frontmatter.title}</h2>
-        <h3>{node.frontmatter.client}</h3>
+        <h3>{node.frontmatter.subtitle}</h3>
         <span className="tag">{node.frontmatter.tags}</span>
         <div className="body" dangerouslySetInnerHTML={{ __html: node.html }} />
       </div>
