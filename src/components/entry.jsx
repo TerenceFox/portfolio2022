@@ -2,7 +2,7 @@ import * as React from "react";
 
 const Entry = ({ node }) => {
   return (
-    <div className="container cv-entry">
+    <div className="container cv-entry" id={node.frontmatter.title}>
       <div className="year">
         <span className="tag">{node.frontmatter.date}</span>
       </div>

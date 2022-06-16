@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
@@ -7,25 +7,12 @@ import Masonry from "react-masonry-component";
 
 // markup
 const IndexPage = ({ location, data }) => {
-  useEffect(() => {
-    window.onresize = () => {
-      let timer;
-      clearTimeout(timer);
-      timer = setTimeout(() => console.log(window.innerWidth), 250);
-    };
-  });
-  const masonryOptions = {
-    columnWidth: ".cv-entry",
-    itemSelector: ".cv-entry",
-    percentPosition: true,
-  };
-
-  const items = data.allMarkdownRemark.edges.map(({ node }) => {
-    return <Entry node={node} />;
-  });
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(5);
+  const [items, setItems] = useState([]);
 
   const imageContainer = (
-    <div className="cv-entry cv-entry--image">
+    <div className="cv-entry cv-entry--image" key="image">
       <div className="work-image">
         <StaticImage
           className="image"
@@ -37,6 +24,46 @@ const IndexPage = ({ location, data }) => {
     </div>
   );
 
+  const imageToggle = (e) => {
+    if (e.target.outerWidth >= 768) {
+      let newItems = [...items];
+      newItems.splice(1, 0, imageContainer);
+      setItems(newItems);
+    } else {
+      let newItems = items.filter((item) => item !== "image");
+      setItems(newItems);
+    }
+  };
+
+  useEffect(() => {
+    setItems(
+      data.allMarkdownRemark.edges.map(({ node }, i) => {
+        return <Entry node={node} key={i.toString()} />;
+      })
+    );
+    window.onresize = (e) => {
+      let timer;
+      clearTimeout(timer);
+      timer = setTimeout(imageToggle(e), 250);
+    };
+  }, []);
+
+  const masonryOptions = {
+    columnWidth: ".cv-entry",
+    itemSelector: ".cv-entry",
+    percentPosition: true,
+  };
+
+  const pageBack = () => {
+    setStart(5);
+    setEnd(11);
+  };
+
+  const pageForward = () => {
+    setStart(0);
+    setEnd(5);
+  };
+
   return (
     <Layout location={location}>
       <Masonry
@@ -44,8 +71,10 @@ const IndexPage = ({ location, data }) => {
         elementType={"div"}
         options={masonryOptions}
       >
-        {items.slice(0, 5)}
+        {items.slice(start, end)}
       </Masonry>
+      <button onClick={pageBack}> {`<-`}</button>
+      <button onClick={pageForward}> {`->`}</button>
     </Layout>
   );
 };
