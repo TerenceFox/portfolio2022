@@ -7,11 +7,13 @@ import Masonry from "react-masonry-component";
 
 // markup
 const IndexPage = ({ location, data }) => {
-  const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(5);
   const items = data.allMarkdownRemark.edges.map(({ node }, i) => {
     return <Entry node={node} key={i.toString()} />;
   });
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(5);
+  const [total, setTotal] = useState(items.length);
+  const [imgToggle, setImgToggle] = useState(false);
 
   const imageContainer = (
     <div className="cv-entry cv-entry--image" key="image">
@@ -26,11 +28,20 @@ const IndexPage = ({ location, data }) => {
     </div>
   );
 
+  const imageToggle = (width) => {
+    if (width > 768 && !imgToggle) {
+      setImgToggle(true);
+    } else {
+      setImgToggle(false);
+    }
+  };
+
   let timer;
   useEffect(() => {
+    imageToggle(window.innerWidth);
     window.onresize = (e) => {
       clearTimeout(timer);
-      timer = setTimeout(console.log("hi"), 250);
+      timer = setTimeout(imageToggle.bind(this, e.target.outerWidth), 250);
     };
   }, []);
 
@@ -52,17 +63,32 @@ const IndexPage = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <Masonry
-        className="entry-grid"
-        elementType={"div"}
-        options={masonryOptions}
-      >
-        {items[start]}
-        {imageContainer}
-        {items.slice(start + 1, end - 1)}
-      </Masonry>
-      <button onClick={pageBack}> {`<-`}</button>
-      <button onClick={pageForward}> {`->`}</button>
+      {imgToggle && (
+        <>
+          <Masonry
+            className="entry-grid"
+            elementType={"div"}
+            options={masonryOptions}
+          >
+            {items[start]}
+            {imageContainer}
+            {items.slice(start + 1, end - 1)}
+          </Masonry>
+          <button onClick={pageBack}> {`<-`}</button>
+          <button onClick={pageForward}> {`->`}</button>
+        </>
+      )}
+      {!imgToggle && (
+        <>
+          <Masonry
+            className="entry-grid"
+            elementType={"div"}
+            options={masonryOptions}
+          >
+            {items}
+          </Masonry>
+        </>
+      )}
     </Layout>
   );
 };
