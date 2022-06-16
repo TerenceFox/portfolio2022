@@ -1,10 +1,12 @@
 ---
-date: "2020"
-title: "Kennedy Children Center"
-subtitle: "Internal Wiki"
+date: "2019"
+longDate: “2019-04-01”
+title: "Kennedy Children’s Center | Internal Wiki"
+subtitle: "Freelance Project"
 tags: "PHP / CSS / WORDPRESS / LINODE"
 ---
 
-Kennedy Children Center is a nonprofit education organization that operates two pre-schools that serves children with developmental delays from low-income backgrounds. This project provided them with an easily accessible, always up-to-date source of documentation, forms and policies for their staff.  
-
-It is a standalone Wordpress site with custom plugins that provide wiki functionality, like automatic linking, tags and categories for organizing posts, and deployed to a Linode VM. Wordpress allows non-technical team members at KCC to make new posts and updates as needed.  
+Kennedy Children’s Center is a nonprofit education organization that operates two preschools for children with developmental delays from low-income backgrounds. This project provided them with an easily accessible, always up-to-date home for documents, forms and policies for their staff.
+Wordpress-based with custom plugins for easy upkeep and new content creation
+Custom styling to align with brand identity
+Requirements based on findings from leading design thinking workshops with stakeholders

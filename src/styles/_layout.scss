@@ -34,12 +34,6 @@ body, html {
 .entry-grid {
   width: 100%;
 }
-.cv-entry {
-  width: 100%;
-  @include breakpoint(sm) {
-    width: 30%;
-  }
-}
 
 header {
   @include breakpoint(sm) {

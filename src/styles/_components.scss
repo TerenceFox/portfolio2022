@@ -44,10 +44,16 @@ nav {
 
 /* CV Entries */
 .cv-entry {
+  padding: 10px;
+  min-height: 300px;
   h3 {
     margin-bottom: 1rem;
   }
   .body {
     margin-bottom: 3rem;
+  }
+  width: 100%;
+  @include breakpoint(sm) {
+    width: 33%;
   }
 }
