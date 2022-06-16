@@ -9,7 +9,9 @@ import Masonry from "react-masonry-component";
 const IndexPage = ({ location, data }) => {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
-  const [items, setItems] = useState([]);
+  const items = data.allMarkdownRemark.edges.map(({ node }, i) => {
+    return <Entry node={node} key={i.toString()} />;
+  });
 
   const imageContainer = (
     <div className="cv-entry cv-entry--image" key="image">
@@ -24,27 +26,11 @@ const IndexPage = ({ location, data }) => {
     </div>
   );
 
-  const imageToggle = (e) => {
-    if (e.target.outerWidth >= 768) {
-      let newItems = [...items];
-      newItems.splice(1, 0, imageContainer);
-      setItems(newItems);
-    } else {
-      let newItems = items.filter((item) => item !== "image");
-      setItems(newItems);
-    }
-  };
-
+  let timer;
   useEffect(() => {
-    setItems(
-      data.allMarkdownRemark.edges.map(({ node }, i) => {
-        return <Entry node={node} key={i.toString()} />;
-      })
-    );
     window.onresize = (e) => {
-      let timer;
       clearTimeout(timer);
-      timer = setTimeout(imageToggle(e), 250);
+      timer = setTimeout(console.log("hi"), 250);
     };
   }, []);
 
@@ -71,7 +57,9 @@ const IndexPage = ({ location, data }) => {
         elementType={"div"}
         options={masonryOptions}
       >
-        {items.slice(start, end)}
+        {items[start]}
+        {imageContainer}
+        {items.slice(start + 1, end - 1)}
       </Masonry>
       <button onClick={pageBack}> {`<-`}</button>
       <button onClick={pageForward}> {`->`}</button>
