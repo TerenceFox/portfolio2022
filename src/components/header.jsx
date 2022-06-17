@@ -17,12 +17,16 @@ const Header = ({ location }) => {
         <ul>
           <li>
             <h2>
-              <Link to="/work">Work</Link>
+              <Link to="/work" activeClassName="active">
+                Work
+              </Link>
             </h2>
           </li>
           <li>
             <h2>
-              <Link to="/photography">Photography</Link>
+              <Link to="/photography" activeClassName="active">
+                Photography
+              </Link>
             </h2>
           </li>
         </ul>

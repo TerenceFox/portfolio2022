@@ -42,6 +42,12 @@ nav {
     }
 }
 
+header {
+  .active {
+    color: $accent;
+  }
+}
+
 /* CV Entries */
 .cv-entry {
   padding: 15px;
