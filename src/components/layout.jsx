@@ -1,5 +1,6 @@
 import * as React from "react";
-import Header from "../components/header";
+import Header from "./header";
+import Footer from "./footer";
 import "../styles/styles.scss";
 
 const Layout = ({ children, location }) => {
@@ -15,9 +16,7 @@ const Layout = ({ children, location }) => {
     <div className={`wrapper wrapper--${activePage}`}>
       <Header location={location} />
       <main>{children}</main>
-      <footer>
-        <h3>Contact</h3>
-      </footer>
+      <Footer />
     </div>
   );
 };

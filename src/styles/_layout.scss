@@ -3,7 +3,8 @@ body, html {
   height: 100%;
   padding: .5rem;
   @include breakpoint(sm) {
-    padding: 1rem;
+    padding: 0;
+    margin: 0;
   }
 }
 
@@ -14,11 +15,14 @@ body, html {
 }
 
 .wrapper--home {
+  footer {
+    order: 3;
+  }
   main {
-    order: 1;
+    order: 2;
   }
   header {
-    order: 2;
+    order: 1;
   }
   @include breakpoint(sm) {
     header {
@@ -35,22 +39,37 @@ body, html {
   width: 100%;
 }
 
+.wrapper--work {
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+  overflow-y: scroll;
+  @include breakpoint(sm) {
+    height: unset;
+    overflow-y: unset;
+  }
+}
 header {
   @include breakpoint(sm) {
     display: inline-flex;
     width: 100%;
+    height: 10%;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-
 footer {
+  height: 100px;
   order: 3;
   display:inline-flex;
   width: 100%;
-  justify-self: end;
-  justify-content: end;
+  align-items: center;
+  .tag, h3 {
+    margin-right: 10px;
+  }
 }
 
 .container {

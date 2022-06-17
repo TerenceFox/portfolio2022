@@ -51,19 +51,17 @@ const IndexPage = ({ location, data }) => {
     percentPosition: true,
   };
 
-  const pageForward = () => {
+  const pageBack = () => {
     if (start >= 6) {
       const newStart = start - 6;
-      setEnd(newStart > 6 ? newStart : 6);
+      setEnd(newStart > 5 ? newStart : 6);
       setStart(newStart >= 0 ? newStart : 0);
     }
   };
 
-  const pageBack = () => {
-    const newStart = start + 6;
-    const newEnd = end + 6;
-    setStart(newStart <= total - 6 ? newStart : total - 6);
-    setEnd(newEnd <= total ? newEnd : total);
+  const pageForward = () => {
+    setStart(5);
+    setEnd(11);
   };
 
   return (
@@ -79,48 +77,8 @@ const IndexPage = ({ location, data }) => {
             {imageContainer}
             {items.slice(start + 1, end - 1)}
           </Masonry>
-          <div className="page-buttons">
-            <svg
-              onClick={pageForward}
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-opacity="0"
-                d="M3.35453 25.9463L48.5 2.47068V47.6161L3.35453 25.9463Z"
-                stroke="black"
-              />
-            </svg>
-            <svg
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="25"
-                cy="25"
-                r="23.5"
-                stroke="black"
-                fill-opacity="0"
-              />
-            </svg>
-            <svg
-              onClick={pageBack}
-              width="50"
-              height="50"
-              viewBox="0 0 50 50"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M46.6455 25.9463L1.5 2.47068V47.6161L46.6455 25.9463Z"
-                stroke="black"
-                fill-opacity="0"
-              />
-            </svg>
-          </div>
+          <button onClick={pageBack}> {`<-`}</button>
+          <button onClick={pageForward}> {`->`}</button>
         </>
       )}
       {!imgToggle && (

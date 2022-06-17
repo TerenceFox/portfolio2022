@@ -53,3 +53,19 @@ nav {
     width: 33%;
   }
 }
+
+.page-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+svg {
+  margin-right: 10px;
+  path {
+    stroke-width: 1;
+  }
+  path:hover {
+    stroke-width: 3;
+    stroke: $accent;
+  }
+}
