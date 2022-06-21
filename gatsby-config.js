@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Portfolio Site",
+    siteUrl: "https://www.terencefox.me",
+    title: "Terence Fox | UX Engineer",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -26,6 +26,12 @@ module.exports = {
         path: "./src/posts/",
       },
       __key: "posts",
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/favicon.png",
+      },
     },
   ],
 };
