@@ -11,7 +11,7 @@ const IndexPage = ({ location, data }) => {
     return <Entry node={node} key={i.toString()} />;
   });
   const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(6);
+  const [end, setEnd] = useState(5);
   const [total, setTotal] = useState(items.length);
   const [imgToggle, setImgToggle] = useState(false);
 
@@ -52,18 +52,21 @@ const IndexPage = ({ location, data }) => {
   };
 
   const pageForward = () => {
-    if (start >= 6) {
-      const newStart = start - 6;
-      setEnd(newStart > 6 ? newStart : 6);
-      setStart(newStart >= 0 ? newStart : 0);
+    if (start >= 5) {
+      const newStart = start - 5;
+      const newEnd = end - 5;
+      setEnd(newEnd > 5 ? newEnd : 5);
+      setStart(newStart > 0 ? newStart : 0);
     }
   };
 
   const pageBack = () => {
-    const newStart = start + 6;
-    const newEnd = end + 6;
-    setStart(newStart <= total - 6 ? newStart : total - 6);
-    setEnd(newEnd <= total ? newEnd : total);
+    if (end < total) {
+      const newStart = start + 5;
+      const newEnd = end + 5;
+      setStart(newStart);
+      setEnd(newEnd);
+    }
   };
 
   return (
@@ -77,7 +80,7 @@ const IndexPage = ({ location, data }) => {
           >
             {items[start]}
             {imageContainer}
-            {items.slice(start + 1, end - 1)}
+            {items.slice(start + 1, end)}
           </Masonry>
           <div className="page-buttons">
             <svg
@@ -88,7 +91,7 @@ const IndexPage = ({ location, data }) => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-opacity="0"
+                fillOpacity="0"
                 d="M3.35453 25.9463L48.5 2.47068V47.6161L3.35453 25.9463Z"
                 stroke="black"
               />
@@ -99,13 +102,7 @@ const IndexPage = ({ location, data }) => {
               viewBox="0 0 50 50"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle
-                cx="25"
-                cy="25"
-                r="23.5"
-                stroke="black"
-                fill-opacity="0"
-              />
+              <circle cx="25" cy="25" r="23.5" stroke="black" fillOpacity="0" />
             </svg>
             <svg
               onClick={pageBack}
@@ -117,7 +114,7 @@ const IndexPage = ({ location, data }) => {
               <path
                 d="M46.6455 25.9463L1.5 2.47068V47.6161L46.6455 25.9463Z"
                 stroke="black"
-                fill-opacity="0"
+                fillOpacity="0"
               />
             </svg>
           </div>

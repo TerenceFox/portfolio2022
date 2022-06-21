@@ -1,8 +1,8 @@
 ---
 date: "2021"
-longDate: “2021-01-15”
+longDate: "2021-01-15"
 title: "Dow Chemical | Web App Development"
-subtitle: “Avanade Project"
+subtitle: "Avanade Project"
 tags: "AURELIA / .NET / AZURE"
 ---
 

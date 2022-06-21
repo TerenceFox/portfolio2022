@@ -1,6 +1,6 @@
 ---
 date: "2018"
-longDate: “2018-03-01”
+longDate: "2018-03-01"
 title: "Udacity"
 subtitle: "Full Stack Web Developer Nanodegree"
 tags: "CERTIFICATION"

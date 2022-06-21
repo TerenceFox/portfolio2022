@@ -1,6 +1,6 @@
 ---
 date: "2020"
-longDate: “2020-01-15”
+longDate: "2020-01-15"
 title: "Kaiser Permanente | Web App Development"
 subtitle: "Avanade Project"
 tags: "ANGULAR / SPRING / LINUX"

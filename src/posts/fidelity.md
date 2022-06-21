@@ -1,6 +1,6 @@
 ---
 date: "2022"
-longDate: “2022-01-15”
+longDate: "2022-01-15"
 title: "Fidelity Investments | App Development"
 subtitle: "Avanade Project"
 tags: "ANGULAR / JAVA / ELECTRON / AWS"

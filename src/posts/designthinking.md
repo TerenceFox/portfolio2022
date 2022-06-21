@@ -1,6 +1,6 @@
 ---
 date: "2020"
-longDate: “2020-05-18”
+longDate: "2020-05-18"
 title: "LUMA Institute Design Thinking"
 subtitle: "Practitioner Certification Program"
 tags: "CERTIFICATION"

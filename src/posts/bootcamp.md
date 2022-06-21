@@ -1,6 +1,6 @@
 ---
 date: "2021"
-longDate: “2021-06-01”
+longDate: "2021-06-01"
 title: "React and Angular Bootcamp | Course Instructor"
 subtitle: "Avanade Project"
 tags: "EMPLOYEE EXPERIENCE PROJECT"

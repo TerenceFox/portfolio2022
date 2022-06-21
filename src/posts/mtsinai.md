@@ -1,6 +1,6 @@
 ---
 date: "2019"
-longDate: “2019-10-01”
+longDate: "2019-10-01"
 title: "Mt. Sinai Health System | Application Support & Maintenance"
 subtitle: "Avanade Project"
 tags: "REACT / CSS+HTML / GROOVY+GRAILS / LINUX"
