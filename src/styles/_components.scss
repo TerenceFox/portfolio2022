@@ -87,37 +87,23 @@ svg {
     display: grid;
     grid: auto / repeat(3, 1fr);
   }
-  #photo4 {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 2;
-  }
 
   #photo5 {
     grid-row: 2 / span 2;
-    grid-column: 3 / span 1;
-  }
-
-  #photo7 {
     grid-column: 2 / span 2;
   }
 
-  #photo14 {
+  #photo7{
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  #photo8 {
     grid-column: 1 / span 2;
   }
 
-  #photo18 {
-    grid-row: 8 / span 2;
-  }
-
-  #photo20 {
-    grid-column: 1 / span 3;
-  }
-
-  #photo21 {
-    grid-row: 9 / 10;
-  }
-
-  #photo25 {
-    grid-column: 1 / span 3;
+  #photo9 {
+    grid-row: 5 / span 3;
+    grid-column: 2 / span 2;
   }
 }
