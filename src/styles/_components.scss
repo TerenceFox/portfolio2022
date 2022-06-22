@@ -63,6 +63,12 @@ header {
 .page-buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  circle.active {
+    fill-opacity: 1;
+    fill: $accent;
+    stroke: $accent;
+  }
 }
 
 svg {

@@ -21,7 +21,7 @@ const IndexPage = ({ location, data }) => {
           console.log(image);
           return (
             <div className="photo-wrapper" id={`photo${i + 1}`}>
-              <GatsbyImage image={image} key={i} alt="some bullshit" />
+              <GatsbyImage image={image} key={i} alt="art photo" />
             </div>
           );
         })}

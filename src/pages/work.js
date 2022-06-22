@@ -6,7 +6,7 @@ import Entry from "../components/entry";
 import Masonry from "react-masonry-component";
 
 // markup
-const IndexPage = ({ location, data }) => {
+const WorkPage = ({ location, data }) => {
   const items = data.allMarkdownRemark.edges.map(({ node }, i) => {
     return <Entry node={node} key={i.toString()} />;
   });
@@ -73,15 +73,6 @@ const IndexPage = ({ location, data }) => {
     <Layout location={location}>
       {imgToggle && (
         <>
-          <Masonry
-            className="entry-grid"
-            elementType={"div"}
-            options={masonryOptions}
-          >
-            {items[start]}
-            {imageContainer}
-            {items.slice(start + 1, end)}
-          </Masonry>
           <div className="page-buttons">
             <svg
               onClick={pageForward}
@@ -97,12 +88,49 @@ const IndexPage = ({ location, data }) => {
               />
             </svg>
             <svg
-              width="50"
-              height="50"
+              width="25"
+              height="25"
               viewBox="0 0 50 50"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <circle cx="25" cy="25" r="23.5" stroke="black" fillOpacity="0" />
+              <circle
+                className={end <= 5 ? "active" : ""}
+                cx="25"
+                cy="25"
+                r="23.5"
+                stroke="black"
+                fillOpacity="0"
+              />
+            </svg>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 50 50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                className={end > 5 && end <= 10 ? "active" : ""}
+                cx="25"
+                cy="25"
+                r="23.5"
+                stroke="black"
+                fillOpacity="0"
+              />
+            </svg>
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 50 50"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                className={end > 10 && end <= 15 ? "active" : ""}
+                cx="25"
+                cy="25"
+                r="23.5"
+                stroke="black"
+                fillOpacity="0"
+              />
             </svg>
             <svg
               onClick={pageBack}
@@ -118,6 +146,15 @@ const IndexPage = ({ location, data }) => {
               />
             </svg>
           </div>
+          <Masonry
+            className="entry-grid"
+            elementType={"div"}
+            options={masonryOptions}
+          >
+            {items[start]}
+            {imageContainer}
+            {items.slice(start + 1, end)}
+          </Masonry>
         </>
       )}
       {!imgToggle && (
@@ -135,7 +172,7 @@ const IndexPage = ({ location, data }) => {
   );
 };
 
-export default IndexPage;
+export default WorkPage;
 
 export const postsQuery = graphql`
   query {
