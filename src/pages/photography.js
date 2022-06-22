@@ -13,8 +13,10 @@ const IndexPage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <p>
-        Interested in buying prints?{" "}
-        <a href="mailto:terencecfox@gmail.com">Shoot me an email.</a>
+        Interested in buying prints? Shoot me an{" "}
+        <a className="inline-email" href="mailto:terencecfox@gmail.com">
+          email.
+        </a>
       </p>
       <div className="photo-grid">
         {images.map((image, i) => {

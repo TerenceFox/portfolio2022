@@ -17,7 +17,7 @@ const WorkPage = ({ location, data }) => {
 
   const imageContainer = (
     <div className="cv-entry cv-entry--image" key="image">
-      <div className="work-image">
+      <div className="work--image">
         <StaticImage
           className="image"
           src="../images/waterfall2.jpg"
