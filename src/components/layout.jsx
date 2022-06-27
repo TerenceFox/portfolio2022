@@ -22,7 +22,6 @@ const Layout = ({ children, location }) => {
       </Helmet>
       <Header location={location} />
       <main>{children}</main>
-      <Footer />
     </div>
   );
 };

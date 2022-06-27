@@ -15,9 +15,6 @@ body, html {
 }
 
 .wrapper--home {
-  footer {
-    order: 3;
-  }
   main {
     order: 2;
   }
@@ -44,7 +41,6 @@ body, html {
 }
 
 main {
-  height: 100%;
   overflow-y: scroll;
   @include breakpoint(sm) {
     height: unset;
@@ -52,25 +48,16 @@ main {
   }
 }
 header {
+  display: flex;
+  flex-direction: column;
   @include breakpoint(sm) {
     display: inline-flex;
     width: 100%;
-    height: 10%;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-footer {
-  height: 100px;
-  order: 3;
-  display:inline-flex;
-  width: 100%;
-  align-items: center;
-  .tag, h3 {
-    margin-right: 10px;
-  }
-}
 
 .container {
   display: flex;
@@ -80,7 +67,7 @@ footer {
 .wrapper {
   height: 100%;
   display: grid;
-  grid-template-rows: 120px auto 120px;
+  grid-template-rows: 175px auto;
   @include breakpoint(sm) {
     grid-template-rows: auto;
   }
