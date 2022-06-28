@@ -9,7 +9,6 @@ body, html {
 }
 
 #gatsby-focus-wrapper {
-  height: 100vh;
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -29,15 +28,7 @@ body, html {
       order: 2;
     }
   }
-}
-
-
-.entry-grid {
-  width: 100%;
-}
-
-.wrapper--work {
-  height: 100vh;
+  margin-bottom: 4rem;
 }
 
 main {

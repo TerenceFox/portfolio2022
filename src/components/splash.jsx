@@ -24,16 +24,19 @@ const Splash = ({ location, children }) => {
             I'm a Brooklyn-based front end web developer that is committed to
             delivering pixel perfect interfaces that work beautifully across the
             full spectrum of digital devices. Focusing on building user
-            interfaces, I've contributed to web-based applications for Fortune
-            500 companies across a variety of industries. I have deep expertise
+            interfaces, I've helped Fortune 500 companies build web-based
+            applications across a variety of industries. I have deep expertise
             in the food & hospitality industries as well as experience in
             healthcare, manufacturing and finance. I'm strongly motivated to
             find innovative solutions to problems through collaboration and
             design-led thinking. As a former chef, I'm strongly self-motivated
             and learned early in my career the value of committing to learning
             new things each day as well as lifting up and empowering your
-            teammates. If you think I could help make your product great, reach
-            out and let's talk!
+            teammates. I'm open to new opportunities; if your team is in need of
+            a UX Engineer,
+            <a href="mailto:terencecfox@gmail.com" target="_blank">
+              <span className="accent"> let's talk!</span>
+            </a>
           </p>
         </div>
       </div>

@@ -25,12 +25,12 @@ const Header = ({ location }) => {
         <ul>
           <li className="nav--link">
             <Link to="/" activeClassName="active">
-              Work
+              work
             </Link>
           </li>
           <li className="nav--link">
             <Link to="/photography" activeClassName="active">
-              Photography
+              photography
             </Link>
           </li>
         </ul>

@@ -55,12 +55,20 @@ picture {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* Remove all default styling for inputs */
 input,
 button,
 textarea,
 select {
+  background: none; 
+  color: inherit;
+  border: none;
+  color: inherit;
+  border: none;
+  padding: 0;
   font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -127,10 +135,13 @@ h3 {
   font-size: 1.125rem;
 }
 
+.tag, .accent {
+  color: $accent;
+}
+
 .tag {
   font-family: $tag;
   font-size: .75rem;
-  color: $accent;
 }
 
 a, a:visited {
@@ -164,6 +175,6 @@ a, a:visited {
   }
  
   @else if $class == lg {
-    @media (min-width: 1200px) { @content; }
+    @media (min-width: 1400px) { @content; }
   }
 } 

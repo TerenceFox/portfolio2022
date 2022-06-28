@@ -4,7 +4,7 @@
   width: 100%;
 }
 
-.splash--image, .work--image {
+.splash--image {
   border: solid $black 1px;
   padding: .5rem;
   margin-bottom: 1rem;
@@ -29,14 +29,18 @@
 .splash--content {
   display: flex;
   flex-direction: column;
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     flex-direction: row;
   }
 }
 .splash--image {
-  @include breakpoint(sm) {
-    width: 67%;
+  width: 100%;
+  @include breakpoint(lg) {
+    width: 60%;
     margin-right: 2rem;
+  }
+  @include breakpoint(md) {
+    width: 50%;
   }
 }
 .splash--intro {
@@ -48,6 +52,10 @@
   @include breakpoint(lg) {
     width: 33%;
     padding-right: 8rem;
+  }
+  @include breakpoint(md) {
+    padding: 2rem;
+    width: 50%;
   }
 }
 
@@ -114,21 +122,29 @@ header {
     fill: $accent;
     stroke: $accent;
   }
+  button:disabled {
+    svg > path, svg > path:hover {
+      stroke-width: 1;
+      stroke: rgb(0,0, 0, 0.1);
+    }
+  }
 }
 
 svg {
   margin-right: 10px;
-  path {
+  path, circle{
     stroke-width: 1;
   }
-  path:hover {
+  path:hover, circle:hover {
     stroke-width: 3;
     stroke: $accent;
   }
 }
 
-.carousel {
+.carousel--items {
   display: flex;
+  min-height: 600px;
+  height: 100%;
 }
 
 /* Photography Page */
