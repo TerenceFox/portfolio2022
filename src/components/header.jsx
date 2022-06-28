@@ -7,9 +7,7 @@ const Header = ({ location }) => {
       <div
         className={`title ${location.pathname === "/" ? "title--hide" : ""}`}
       >
-        <h1>
-          <Link to="/">Terence Fox</Link>
-        </h1>
+        <h1>Terence Fox</h1>
       </div>
       <div className="contact">
         <h3>Contact</h3>
@@ -26,7 +24,7 @@ const Header = ({ location }) => {
       <nav>
         <ul>
           <li className="nav--link">
-            <Link to="/work" activeClassName="active">
+            <Link to="/" activeClassName="active">
               Work
             </Link>
           </li>

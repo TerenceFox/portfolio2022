@@ -66,10 +66,5 @@ header {
 
 .wrapper {
   height: 100%;
-  display: grid;
-  grid-template-rows: 175px auto;
-  @include breakpoint(sm) {
-    grid-template-rows: auto;
-  }
 }
 

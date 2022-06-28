@@ -6,7 +6,7 @@ import Splash from "../components/splash";
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <Splash />
+      <Splash location={location} />
     </Layout>
   );
 };

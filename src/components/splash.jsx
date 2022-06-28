@@ -2,7 +2,7 @@ import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
-const Splash = ({ children }) => {
+const Splash = ({ location, children }) => {
   return (
     <div className="container container--splash">
       <div className="splash--content">
